@@ -1,4 +1,9 @@
 <h3>予定一覧</h3>
+
+<% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
 <p><%= link_to "新規追加", :new_schedule %></p>
 
 <div class="table-container">
@@ -21,10 +26,14 @@
           <td><%= schedule.title %></td>
           <td><%= schedule.start_date %></td>
           <td><%= schedule.end_date %></td>
-          <td><%= schedule.all_day %></td>
+          <td><%= schedule.all_day ? '○' : '' %></td>
           <td><%= schedule.updated_at %></td>
           </tr>
       <% end %>
     </tbody>
   </table>
+  
+</div>
+<div>
+<p>登録されている予定は全部で<span class="total-count"><%= @total_schedules %></span>件です</p>
 </div>
