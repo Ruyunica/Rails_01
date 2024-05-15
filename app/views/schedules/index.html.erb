@@ -24,10 +24,13 @@
         <tr>
           <td><%= schedule.id %></td>
           <td><%= schedule.title %></td>
-          <td><%= schedule.start_date %></td>
-          <td><%= schedule.end_date %></td>
+          <td><%= schedule.start_date.strftime("%Y/%m/%d") %></td>
+          <td><%= schedule.end_date.strftime("%Y/%m/%d") %></td>
           <td><%= schedule.all_day ? '○' : '' %></td>
-          <td><%= schedule.updated_at %></td>
+          <td><%= schedule.updated_at.to_s(:datetime_jp) %></td>
+          <td>
+            <%= link_to "詳細", schedule %>
+          </td>
           </tr>
       <% end %>
     </tbody>
@@ -36,4 +39,6 @@
 </div>
 <div>
 <p>登録されている予定は全部で<span class="total-count"><%= @total_schedules %></span>件です</p>
+<% today = Date.today %>
+<p>本日の日付は<span class="total-count"><%= today.strftime("%Y/%m/%d") %></span>です</p>
 </div>

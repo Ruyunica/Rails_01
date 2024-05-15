@@ -20,6 +20,7 @@ class SchedulesController < ApplicationController
   end
 
   def show
+    @schedule = Schedule.find(params[:id])
   end
 
   def edit
