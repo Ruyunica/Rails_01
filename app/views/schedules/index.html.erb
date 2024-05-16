@@ -34,6 +34,9 @@
           <td>
             <%= link_to "編集", [:edit, schedule] %>
           </td>
+          <td>
+          <%= link_to "削除",  schedule, method: :delete, data: { confirm: "予定を削除しますか？(この操作は元に戻せません)" } %>
+          </td>
           </tr>
       <% end %>
     </tbody>
