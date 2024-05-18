@@ -1,11 +1,11 @@
 body {
   font-family: "メイリオ", Meiryo, sans-serif;
-  background-color: rgb(224, 231, 228);
+  background-color: #f5f5f5;
 }
 
 header{
   font-size: 7px; 
-  background-color: rgb(0, 128, 87); 
+  background-color: #2f4f4f; 
   color: white; 
   display: flex;
   justify-content: center;
@@ -13,14 +13,18 @@ header{
   height: 40px;
 }
 
-.table-container{
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 1080px;
 }
 
 table{
   background-color: white;
+  font-size: 14px;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table th {
@@ -29,9 +33,147 @@ table th {
 
 table td {
   padding: 10px 20px;
+  white-space: nowrap;
 }
 
-.total-count{
-  font-size: 20px;
+table tr {
+  border-bottom: 1px solid #dcdcdc;
+  white-space: nowrap;
+  height: 4rem;
+}
+
+.coloredButton{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2f4f4f;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+.whiteButton{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  text-decoration: none;
+  border: 1px solid gainsboro;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+/*index*/
+.indexTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.indexTable{
+  width: 100%;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.indexInfo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 80px;
+  padding: 0 8px;
+  font-size: 14px;
+}
+
+.totalCount{
+  font-size: 18px;
   font-weight: bold;
+}
+
+/*new,edit*/
+.scheduleContainer{
+  width: 600px;
+  margin: auto;
+}
+
+.editNotice{
+  font-size: 10px;
+}
+
+.formContainer{
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title, .memo{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.dateContainer{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.date{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.allDay{
+  margin-bottom: 10px;
+}
+
+.buttonArea{
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.formStyle{
+  border: 1px solid gainsboro;
+  border-radius: 2px;
+  line-height: 1.5rem;
+  width: 100%;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+/*show*/
+.showTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.editButton{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2f4f4f;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  height: 2rem;
+}
+
+.showTable{
+  width: 560px;
+  border: 1px solid gainsboro;
+  box-sizing: border-box;
+}
+
+.showTable th, .showTable td {
+  max-width: 256px; /* セルの最大幅を設定 */
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word; /* テキストの折り返しを許可 */
 }

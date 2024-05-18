@@ -1,22 +1,30 @@
-<%= link_to "一覧に戻る", :schedules %>
-<%= link_to "編集", edit_schedule_path(@schedule) %>
-<h3><%= @schedule.title %></h3>
+<div class="scheduleContainer">
+  
+  <%= link_to "一覧に戻る", :schedules %>
 
-<table>
-  <tr>
-    <th>開始日</th>
-    <td><%= @schedule.start_date.strftime("%Y/%m/%d") %></td>
-  </tr>
-  <tr>
-    <th>終了日</th>
-    <td><%= @schedule.end_date.strftime("%Y/%m/%d") %></td>
-  </tr>
-  <tr>
-    <th>終日</th>
-    <td><%= @schedule.all_day ? '○' : '' %></td>
-  </tr>
-  <tr>
-    <th>スケジュールメモ</th>
-    <td><%= @schedule.memo %></td>
-  </tr>
-</table>
+  <div class="showTop">
+    <h3><%= @schedule.title %></h3>
+    <%= link_to "編集", edit_schedule_path(@schedule), class: "button editButton" %>
+  </div>
+
+  <div class="formContainer">
+    <table class="showTable">
+      <tr>
+        <th>開始日</th>
+        <td><%= @schedule.start_date.strftime("%Y/%m/%d") %></td>
+      </tr>
+      <tr>
+        <th>終了日</th>
+        <td><%= @schedule.end_date.strftime("%Y/%m/%d") %></td>
+      </tr>
+      <tr>
+        <th>終日</th>
+        <td><%= @schedule.all_day ? '○' : '' %></td>
+      </tr>
+      <tr>
+        <th>スケジュールメモ</th>
+        <td><%= @schedule.memo %></td>
+      </tr>
+    </table>
+  </div>
+</div>

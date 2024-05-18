@@ -1,13 +1,15 @@
-<h3>予定一覧</h3>
 
-<% if flash[:notice] %>
-    <p class="notice"><%= flash[:notice] %></p>
-<% end %>
+<div class="container">
+  <div class="indexTop">
+    <h3>予定一覧</h3>
+    <p><%= link_to "新規追加", :new_schedule, class: "button coloredButton" %></p>
+  </div>
+  
+  <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
 
-<p><%= link_to "新規追加", :new_schedule %></p>
-
-<div class="table-container">
-  <table>
+  <table class="indexTable">
     <thead>
       <tr>
         <th>ID</th>
@@ -42,9 +44,11 @@
     </tbody>
   </table>
   
-</div>
-<div>
-<p>登録されている予定は全部で<span class="total-count"><%= @total_schedules %></span>件です</p>
-<% today = Date.today %>
-<p>本日の日付は<span class="total-count"><%= today.strftime("%Y/%m/%d") %></span>です</p>
+
+  <div class="indexInfo">
+  <p>登録されている予定は全部で<span class="totalCount"><%= @total_schedules %></span>件です</p>
+  <% today = Date.today %>
+  <p>本日の日付は<span class="totalCount"><%= today.strftime("%Y/%m/%d") %></span>です</p>
+  </div>
+
 </div>
